@@ -1,25 +1,29 @@
+import React, { Component } from 'react';
 import logo from './logo.svg';
+import NavBar from './components/Navbar'
 import './App.css';
 
-function App() {
+//fetching API
+class App extends Component{  //uses extends components for render to display html code inside html element
+
+  componentDidMount()
+  {
+    fetch('http://127.0.0.1:8000/api/test' ).then(function(res){
+      res.json().then(function(res){
+        console.log(res);
+       })
+    })
+
+  }
+
+render() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <NavBar/>
     </div>
   );
 }
-
+}
 export default App;
+
+/*this is for demo for purpose*/
