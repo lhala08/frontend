@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import NavBar from './components/Navbar'
+import Login from './pages/Login'
 import './App.css';
 
-//fetching API
+//fetching API - just to test if backend and frontend is well communicated we remove this later
 class App extends Component{  //uses extends components for render to display html code inside html element
 
   componentDidMount()
@@ -20,6 +20,7 @@ render() {
   return (
     <div className="App">
         <NavBar/>
+        <Login/>
     </div>
   );
 }
